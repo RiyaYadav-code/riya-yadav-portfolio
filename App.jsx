@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from 'react-dom/client'; // Required for rendering
+import { createRoot } from 'react-dom/client';
 import { motion } from "framer-motion";
 import { 
   Github, Mail, Phone, MapPin, ExternalLink, 
@@ -87,22 +87,22 @@ const PortfolioResume = () => {
         <div className="md:col-span-8 p-8 md:p-16 bg-[#0c0c0c]">
           <SectionHeading title="About Me" icon={Search} />
           <p className="text-gray-400 leading-relaxed text-lg font-light italic text-justify">
-            Passionate BCA student specializing in AI & Machine Learning with a strong focus on Data Analytics[cite: 32]. 
-            I excel at translating complex datasets into actionable insights using SQL, Python, and Power BI[cite: 33, 34]. 
-            Seeking an internship to apply my AI/ML skills in a corporate environment[cite: 50, 51].
+            Passionate BCA student specializing in AI & Machine Learning with a strong focus on Data Analytics. 
+            I excel at translating complex datasets into actionable insights using SQL, Python, and Power BI. 
+            Seeking an internship to apply my AI/ML skills in a corporate environment.
           </p>
 
           <SectionHeading title="Academic Background" icon={BookOpen} />
           <div className="space-y-8 border-l border-gray-800 pl-6 relative text-sm">
             <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
-            <h3 className="text-white font-bold text-lg">SGT University (2024—2027) [cite: 18, 36]</h3>
-            <p className="text-gray-300 italic">BCA (AI/ML) | Avg SGPA: 8.5 [cite: 21, 37]</p>
+            <h3 className="text-white font-bold text-lg">SGT University (2024—2027)</h3>
+            <p className="text-gray-300 italic">BCA (AI/ML) | Avg SGPA: 8.5</p>
           </div>
           
           <div className="mt-8 relative pl-6 border-l border-gray-800 text-sm">
              <div className="absolute w-3 h-3 bg-gray-500 rounded-full -left-[6.5px] top-1"></div>
-             <h3 className="text-white font-bold text-lg">12th CBSE [cite: 38]</h3>
-             <p className="text-gray-300 italic">Aggregate: 95% [cite: 18, 21, 38]</p>
+             <h3 className="text-white font-bold text-lg">12th CBSE</h3>
+             <p className="text-gray-300 italic">Aggregate: 95%</p>
           </div>
         </div>
       </motion.div>
@@ -110,12 +110,11 @@ const PortfolioResume = () => {
   );
 };
 
-// --- CRITICAL RENDERING LOGIC ---
-// This section connects your React code to the 'root' div in index.html[cite: 375, 393, 394].
+// CRITICAL RENDERING LOGIC
 const container = document.getElementById('root');
 if (container) {
   const root = createRoot(container);
   root.render(<PortfolioResume />);
 }
 
-export default PortfolioResume; [cite: 374, 395]
+export default PortfolioResume;
