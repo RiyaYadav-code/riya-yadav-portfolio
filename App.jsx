@@ -1,4 +1,5 @@
 import React from "react";
+import { createRoot } from 'react-dom/client'; // Required for rendering
 import { motion } from "framer-motion";
 import { 
   Github, Mail, Phone, MapPin, ExternalLink, 
@@ -31,7 +32,7 @@ const SkillBadge = ({ children, isAi }) => (
   </motion.span>
 );
 
-export default function PortfolioResume() {
+const PortfolioResume = () => {
   const skills = [
     { name: "SQL (Intermediate)" }, { name: "Power BI" }, 
     { name: "Python" }, { name: "NLP" }, 
@@ -55,11 +56,11 @@ export default function PortfolioResume() {
             <h1 className="text-3xl font-black tracking-tighter uppercase">RIYA YADAV</h1>
             <p className="text-blue-400 font-medium text-sm mt-2 tracking-wide uppercase">Aspiring Data Analyst Intern</p>
             <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-2 w-2 text-sm">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              <span className="text-[10px] text-blue-300 font-bold uppercase tracking-wider text-sm">Seeking Internship</span>
+              <span className="text-[10px] text-blue-300 font-bold uppercase tracking-wider">Seeking Internship</span>
             </div>
           </div>
 
@@ -86,19 +87,35 @@ export default function PortfolioResume() {
         <div className="md:col-span-8 p-8 md:p-16 bg-[#0c0c0c]">
           <SectionHeading title="About Me" icon={Search} />
           <p className="text-gray-400 leading-relaxed text-lg font-light italic text-justify">
-            Passionate BCA student specializing in AI & Machine Learning with a strong focus on Data Analytics[cite: 33]. 
-            I excel at translating complex datasets into actionable insights using SQL, Python, and Power BI[cite: 32, 34]. 
-            Seeking an internship to apply my AI/ML skills in a corporate environment[cite: 50, 53].
+            Passionate BCA student specializing in AI & Machine Learning with a strong focus on Data Analytics[cite: 32]. 
+            I excel at translating complex datasets into actionable insights using SQL, Python, and Power BI[cite: 33, 34]. 
+            Seeking an internship to apply my AI/ML skills in a corporate environment[cite: 50, 51].
           </p>
 
           <SectionHeading title="Academic Background" icon={BookOpen} />
-          <div className="space-y-8 border-l border-gray-800 pl-6 relative">
+          <div className="space-y-8 border-l border-gray-800 pl-6 relative text-sm">
             <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
-            <h3 className="text-white font-bold text-lg">SGT University (2024—2027)</h3>
-            <p className="text-gray-300 italic">BCA (AI/ML) | Avg SGPA: 8.6+</p>
+            <h3 className="text-white font-bold text-lg">SGT University (2024—2027) [cite: 18, 36]</h3>
+            <p className="text-gray-300 italic">BCA (AI/ML) | Avg SGPA: 8.5 [cite: 21, 37]</p>
+          </div>
+          
+          <div className="mt-8 relative pl-6 border-l border-gray-800 text-sm">
+             <div className="absolute w-3 h-3 bg-gray-500 rounded-full -left-[6.5px] top-1"></div>
+             <h3 className="text-white font-bold text-lg">12th CBSE [cite: 38]</h3>
+             <p className="text-gray-300 italic">Aggregate: 95% [cite: 18, 21, 38]</p>
           </div>
         </div>
       </motion.div>
     </div>
   );
+};
+
+// --- CRITICAL RENDERING LOGIC ---
+// This section connects your React code to the 'root' div in index.html[cite: 375, 393, 394].
+const container = document.getElementById('root');
+if (container) {
+  const root = createRoot(container);
+  root.render(<PortfolioResume />);
 }
+
+export default PortfolioResume; [cite: 374, 395]
