@@ -92,7 +92,8 @@ export default function App() {
     {
       title: "Personal Portfolio Webapp",
       desc: "Developed a responsive site using HTML/CSS and React to showcase projects and technical progress.",
-      tech: ["React", "Tailwind", "Responsive Design"]
+      tech: ["React", "Tailwind", "Responsive Design"],
+      demo: "https://riya-yadav-portfolio.onrender.com" // Added your portfolio link here
     }
   ];
 
