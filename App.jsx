@@ -1,11 +1,23 @@
 import React from "react";
-import { createRoot } from 'react-dom/client';
 import { motion } from "framer-motion";
 import { 
-  Github, Mail, Phone, MapPin, ExternalLink, 
-  BookOpen, Code2, User, Layout, Search, 
-  Cpu, Sparkles, Camera 
+  Github, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  ExternalLink, 
+  BookOpen, 
+  Code2, 
+  User,
+  Layout, 
+  Search,
+  Cpu,
+  Sparkles,
+  Camera,
+  ChevronRight
 } from "lucide-react";
+
+// --- SUB-COMPONENTS ---
 
 const SectionHeading = ({ title, icon: Icon }) => (
   <div className="mb-6 mt-10">
@@ -32,89 +44,223 @@ const SkillBadge = ({ children, isAi }) => (
   </motion.span>
 );
 
-const PortfolioResume = () => {
+// --- MAIN COMPONENT ---
+
+export default function App() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+  };
+
   const skills = [
-    { name: "SQL (Intermediate)" }, { name: "Power BI" }, 
-    { name: "Python" }, { name: "NLP" }, 
-    { name: "Machine Learning" }, { name: "Web Programming" }
+    { name: "SQL (Intermediate)", type: "core" },
+    { name: "Power BI", type: "core" },
+    { name: "Python", type: "core" },
+    { name: "NLP", type: "core" },
+    { name: "Machine Learning", type: "core" },
+    { name: "Web Programming", type: "core" }
   ];
 
   const aiTools = [
     "ChatGPT", "Julius AI", "Claude", "Gemini", "GitHub Copilot", "Prompt Engineering"
   ];
 
+  const projects = [
+    {
+      title: "Fake News Detection Model",
+      desc: "Built an NLP classifier using Python and Scikit-learn to identify misinformation in text data with 75% accuracy.",
+      tech: ["Python", "NLP", "ML"]
+    },
+    {
+      title: "Business Data Analysis",
+      desc: "Applied SQL joins, subqueries, and aggregations to analyze complex datasets and extract performance metrics.",
+      tech: ["SQL", "Data Querying"]
+    },
+    {
+      title: "Interactive Sales Dashboard",
+      desc: "Utilized Power BI to visualize sales trends and KPIs, providing actionable insights through dynamic filtering.",
+      tech: ["Power BI", "DAX", "Visualization"]
+    },
+    {
+      title: "Personal Portfolio Webapp",
+      desc: "Developed a responsive site using HTML/CSS and React to showcase projects and technical progress.",
+      tech: ["React", "Tailwind", "Responsive Design"]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-blue-500/30">
-      <motion.div 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
-        className="max-w-6xl mx-auto grid md:grid-cols-12 min-h-screen shadow-2xl border-x border-gray-900"
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="max-w-6xl mx-auto grid md:grid-cols-12 gap-0 min-h-screen shadow-2xl border-x border-gray-900"
       >
         {/* SIDEBAR */}
         <div className="md:col-span-4 bg-[#111] p-8 md:p-12 border-r border-gray-900">
-          <div className="flex flex-col items-center md:items-start">
+          <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 className="text-3xl font-black tracking-tighter uppercase">RIYA YADAV</h1>
             <p className="text-blue-400 font-medium text-sm mt-2 tracking-wide uppercase">Aspiring Data Analyst Intern</p>
             <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-              <span className="relative flex h-2 w-2 text-sm">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
               <span className="text-[10px] text-blue-300 font-bold uppercase tracking-wider">Seeking Internship</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="mt-10 space-y-4 text-sm text-gray-400">
-            <div className="flex items-center gap-3"><MapPin size={16} /><span>Gurugram, Haryana</span></div>
-            <a href="tel:+919650090065" className="flex items-center gap-3 hover:text-blue-400"><Phone size={16} /><span>+91 9650090065</span></a>
-            <a href="mailto:riyay6624@gmail.com" className="flex items-center gap-3 hover:text-blue-400"><Mail size={16} /><span>riyay6624@gmail.com</span></a>
-          </div>
+          <motion.div variants={itemVariants} className="mt-10 space-y-4 text-sm text-gray-400">
+            <div className="flex items-center gap-3">
+              <MapPin size={16} className="text-gray-600" />
+              <span>Gurugram, Haryana</span>
+            </div>
+            
+            <a href="tel:+919650090065" className="flex items-center gap-3 hover:text-blue-400 transition-colors group">
+              <Phone size={16} className="text-gray-600 group-hover:text-blue-400 transition-colors" />
+              <span>+91 9650090065</span>
+            </a>
 
-          <SectionHeading title="Technical Core" icon={Code2} />
-          <div className="flex flex-wrap">
-            {skills.map(s => <SkillBadge key={s.name}>{s.name}</SkillBadge>)}
-          </div>
-          
-          <div className="mt-6 text-[10px] font-bold text-gray-500 uppercase tracking-widest flex items-center gap-2 mb-3">
-            <Cpu size={14} className="text-blue-400" /> AI & Productivity Tools
-          </div>
-          <div className="flex flex-wrap">
-            {aiTools.map(t => <SkillBadge key={t} isAi>{t}</SkillBadge>)}
-          </div>
+            <a href="mailto:riyay6624@gmail.com" className="flex items-center gap-3 hover:text-blue-400 transition-colors group">
+              <Mail size={16} className="text-gray-600 group-hover:text-blue-400 transition-colors" />
+              <span className="truncate">riyay6624@gmail.com</span>
+            </a>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <SectionHeading title="Technical Core" icon={Code2} />
+            <div className="flex flex-wrap mb-4">
+              {skills.map(skill => (
+                <SkillBadge key={skill.name}>{skill.name}</SkillBadge>
+              ))}
+            </div>
+            
+            <div className="mt-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Cpu size={14} className="text-blue-400" />
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">AI & Productivity Tools</span>
+              </div>
+              <div className="flex flex-wrap">
+                {aiTools.map(tool => (
+                  <SkillBadge key={tool} isAi>{tool}</SkillBadge>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <SectionHeading title="Transferable Skills" icon={User} />
+            <div className="space-y-2 text-sm text-gray-400">
+              <p>• Strategic Team Collaboration</p>
+              <p>• Fast Learner & Adaptable</p>
+              <p>• Effective Communication</p>
+              <p>• Analytical Problem Solving</p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <SectionHeading title="Languages" />
+            <div className="flex gap-4 text-sm font-medium">
+              <span className="text-gray-300">English</span>
+              <span className="text-gray-500">|</span>
+              <span className="text-gray-300">Hindi</span>
+            </div>
+          </motion.div>
         </div>
 
         {/* MAIN CONTENT */}
         <div className="md:col-span-8 p-8 md:p-16 bg-[#0c0c0c]">
-          <SectionHeading title="About Me" icon={Search} />
-          <p className="text-gray-400 leading-relaxed text-lg font-light italic text-justify">
-            Passionate BCA student specializing in AI & Machine Learning with a strong focus on Data Analytics. 
-            I excel at translating complex datasets into actionable insights using SQL, Python, and Power BI. 
-            Seeking an internship to apply my AI/ML skills in a corporate environment.
-          </p>
-
-          <SectionHeading title="Academic Background" icon={BookOpen} />
-          <div className="space-y-8 border-l border-gray-800 pl-6 relative text-sm">
-            <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
-            <h3 className="text-white font-bold text-lg">SGT University (2024—2027)</h3>
-            <p className="text-gray-300 italic">BCA (AI/ML) | Avg SGPA: 8.5</p>
-          </div>
           
-          <div className="mt-8 relative pl-6 border-l border-gray-800 text-sm">
-             <div className="absolute w-3 h-3 bg-gray-500 rounded-full -left-[6.5px] top-1"></div>
-             <h3 className="text-white font-bold text-lg">12th CBSE</h3>
-             <p className="text-gray-300 italic">Aggregate: 95%</p>
-          </div>
+          <motion.section variants={itemVariants}>
+            <SectionHeading title="About Me" icon={Search} />
+            <p className="text-gray-400 leading-relaxed text-lg font-light italic text-justify">
+              Passionate BCA student specializing in AI & Machine Learning with a strong focus on Data Analytics. 
+              I excel at translating complex datasets into clear, actionable business insights using SQL, 
+              Python, and Power BI. My goal is to leverage advanced AI tools to drive data-led decision-making.
+            </p>
+          </motion.section>
+
+          <motion.section variants={itemVariants}>
+            <SectionHeading title="Academic Background" icon={BookOpen} />
+            <div className="space-y-8">
+              <div className="relative pl-6 border-l border-gray-800">
+                <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
+                <div className="flex flex-col md:flex-row md:justify-between mb-1">
+                  <h3 className="text-white font-bold text-lg italic">SGT University</h3>
+                  <span className="text-blue-400 text-sm font-mono">2024 — 2027</span>
+                </div>
+                <p className="text-gray-300 font-medium italic">Bachelor of Computer Applications (AI/ML)</p>
+                <div className="mt-2 flex flex-wrap gap-3 text-xs">
+                  <span className="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20 italic">Pursuing</span>
+                  <span className="bg-gray-800 text-gray-400 px-2 py-1 rounded">Avg SGPA: 8.6+</span>
+                </div>
+              </div>
+
+              <div className="relative pl-6 border-l border-gray-800">
+                <div className="absolute w-3 h-3 bg-gray-700 rounded-full -left-[6.5px] top-1"></div>
+                <div className="flex flex-col md:flex-row md:justify-between mb-1">
+                  <h3 className="text-white font-bold text-lg italic">RPS Public School</h3>
+                  <span className="text-gray-500 text-sm font-mono">Completed 2024</span>
+                </div>
+                <p className="text-gray-300 font-medium">Senior Secondary (12th), CBSE</p>
+                <p className="text-gray-500 text-sm mt-1 italic">Aggregate: 95%</p>
+              </div>
+            </div>
+          </motion.section>
+
+          <motion.section variants={itemVariants}>
+            <SectionHeading title="Experience" icon={Camera} />
+            <div className="relative pl-6 border-l border-gray-800">
+              <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
+              <div className="flex flex-col md:flex-row md:justify-between mb-1">
+                <h3 className="text-white font-bold text-lg italic">Event Volunteer</h3>
+                <span className="text-blue-400 text-sm font-mono">2024</span>
+              </div>
+              <p className="text-gray-300 font-medium italic">University Fest, SGT University</p>
+              <ul className="mt-3 space-y-2 text-sm text-gray-400 list-disc list-inside">
+                <li>Managed coordination between design, logistics, and promotion teams</li>
+                <li>Took part in event branding and photography coverage</li>
+                <li>Ensured smooth operations during high-pressure scenarios</li>
+              </ul>
+            </div>
+          </motion.section>
+
+          <motion.section variants={itemVariants}>
+            <SectionHeading title="Academic Projects" icon={Layout} />
+            <div className="grid md:grid-cols-2 gap-6">
+              {projects.map((project, idx) => (
+                <div key={idx} className="p-5 bg-[#111] border border-gray-900 rounded-lg hover:border-blue-500/30 transition-all group">
+                  <div className="flex justify-between items-center mb-3">
+                    <h4 className="font-bold text-gray-200 group-hover:text-blue-400 transition-colors italic">{project.title}</h4>
+                    <div className="flex gap-2">
+                      <Github size={14} className="text-gray-600 hover:text-white cursor-pointer" />
+                      <ExternalLink size={14} className="text-gray-600 hover:text-white cursor-pointer" />
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-400 leading-relaxed mb-4">{project.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map(t => (
+                      <span key={t} className="text-[10px] text-gray-500 font-mono uppercase tracking-tighter">#{t}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+
+          <motion.div variants={itemVariants} className="mt-20 text-center text-gray-700 text-[10px] tracking-[0.3em] uppercase">
+            Available for Internship Opportunities • 2026
+          </motion.div>
         </div>
       </motion.div>
     </div>
   );
-};
-
-// CRITICAL RENDERING LOGIC
-const container = document.getElementById('root');
-if (container) {
-  const root = createRoot(container);
-  root.render(<PortfolioResume />);
 }
-
-export default PortfolioResume;
