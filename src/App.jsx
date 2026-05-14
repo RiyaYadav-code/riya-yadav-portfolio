@@ -13,8 +13,7 @@ import {
   Search,
   Cpu,
   Sparkles,
-  Camera,
-  ChevronRight
+  Camera
 } from "lucide-react";
 
 // --- SUB-COMPONENTS ---
@@ -77,7 +76,8 @@ export default function App() {
     {
       title: "Fake News Detection Model",
       desc: "Built an NLP classifier using Python and Scikit-learn to identify misinformation in text data with 75% accuracy.",
-      tech: ["Python", "NLP", "ML"]
+      tech: ["Python", "NLP", "ML"],
+      demo: "https://fake-news-project-o6e8.onrender.com" // YOUR PROJECT LINK
     },
     {
       title: "Business Data Analysis",
@@ -184,7 +184,8 @@ export default function App() {
             <p className="text-gray-400 leading-relaxed text-lg font-light italic text-justify">
               Passionate BCA student specializing in AI & Machine Learning with a strong focus on Data Analytics. 
               I excel at translating complex datasets into clear, actionable business insights using SQL, 
-              Python, and Power BI. My goal is to leverage advanced AI tools to drive data-led decision-making.
+              Python, and Power BI. My goal is to leverage advanced AI tools like Julius AI and Prompt 
+              Engineering to drive data-led decision-making in a fast-paced corporate environment.
             </p>
           </motion.section>
 
@@ -207,7 +208,7 @@ export default function App() {
               <div className="relative pl-6 border-l border-gray-800">
                 <div className="absolute w-3 h-3 bg-gray-700 rounded-full -left-[6.5px] top-1"></div>
                 <div className="flex flex-col md:flex-row md:justify-between mb-1">
-                  <h3 className="text-white font-bold text-lg italic">RPS Public School</h3>
+                  <h3 className="text-white font-bold text-lg italic">RPS Public School, Dharuhera</h3>
                   <span className="text-gray-500 text-sm font-mono">Completed 2024</span>
                 </div>
                 <p className="text-gray-300 font-medium">Senior Secondary (12th), CBSE</p>
@@ -242,7 +243,15 @@ export default function App() {
                     <h4 className="font-bold text-gray-200 group-hover:text-blue-400 transition-colors italic">{project.title}</h4>
                     <div className="flex gap-2">
                       <Github size={14} className="text-gray-600 hover:text-white cursor-pointer" />
-                      <ExternalLink size={14} className="text-gray-600 hover:text-white cursor-pointer" />
+                      
+                      {/* CLICKABLE LINK LOGIC */}
+                      {project.demo ? (
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" title="View Live Project">
+                          <ExternalLink size={14} className="text-blue-400 hover:text-blue-200 cursor-pointer" />
+                        </a>
+                      ) : (
+                        <ExternalLink size={14} className="text-gray-600 hover:text-white cursor-pointer" />
+                      )}
                     </div>
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed mb-4">{project.desc}</p>
