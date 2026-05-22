@@ -80,9 +80,10 @@ export default function App() {
       demo: "https://fake-news-project-o6e8.onrender.com" // YOUR PROJECT LINK
     },
     {
-      title: "Business Data Analysis",
-      desc: "Applied SQL joins, subqueries, and aggregations to analyze complex datasets and extract performance metrics.",
-      tech: ["SQL", "Data Querying"]
+      title: "Online Bookstore Analytics",
+      desc: "Analyzed transactional data and inventory metrics for an online bookstore to extract key performance trends and optimize sales insights.",
+      tech: ["SQL", "Data Analytics", "Python"],
+      demo: "https://github.com/RiyaYadav-code/online-bookstore-analytics.git"
     },
     {
       title: "Interactive Sales Dashboard",
