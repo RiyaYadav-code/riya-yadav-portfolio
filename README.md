@@ -21,6 +21,11 @@
 * [cite_start]`App.jsx`: Core source code containing layout, logic, and styling[cite: 183, 268].
 * [cite_start]`package.json`: Configuration file for dependencies and build settings[cite: 180, 269].
 
+## 📜 Professional Certifications
+* **Excel for Data Analysis** – Codecademy  
+  *Developed specialized skills in data cleaning, pivot tables, and complex functions to drive business insights through spreadsheet modeling.* 
+  [View Certification](https://www.linkedin.com/posts/riya-yadav-29674b372_excel-dataanalysis-codecademy-ugcPost-7469296937947803649-fvv8/)
+
 ## ⚙️ How to Deploy on Render
 1. [cite_start]Create a new repository on GitHub and upload `App.jsx`, `package.json`, and this `README.md`[cite: 178, 216, 273].
 2. [cite_start]Log in to [Render.com](https://render.com) and connect your GitHub account[cite: 275].
