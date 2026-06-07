@@ -13,8 +13,7 @@ import {
   Search,
   Cpu,
   Sparkles,
-  Camera,
-  Award
+  Camera
 } from "lucide-react";
 
 // --- SUB-COMPONENTS ---
@@ -279,7 +278,7 @@ export default function App() {
 
           {/* CERTIFICATIONS SECTION */}
           <motion.section variants={itemVariants}>
-            <SectionHeading title="Certifications" icon={Award} />
+            <SectionHeading title="Certifications" icon={BookOpen} />
             <div className="space-y-4">
               {certifications.map((cert) => (
                 <div key={cert.id} className="p-5 bg-[#111] border border-gray-900 rounded-lg">
