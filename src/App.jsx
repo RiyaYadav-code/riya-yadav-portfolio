@@ -13,7 +13,8 @@ import {
   Search,
   Cpu,
   Sparkles,
-  Camera
+  Camera,
+  Award
 } from "lucide-react";
 
 // --- SUB-COMPONENTS ---
@@ -64,31 +65,30 @@ export default function App() {
     { name: "Power BI", type: "core" },
     { name: "Python", type: "core" },
     { name: "Machine Learning", type: "core" },
-    { name: "Web Programming", type: "core" },
-    {name: "Excel",type:"core"}
+    { name: "Excel", type: "core" },
+    { name: "Web Programming", type: "core" }
   ];
 
   const aiTools = [
     "ChatGPT", "Julius AI", "Claude", "Gemini", "GitHub Copilot", "Prompt Engineering"
   ];
 
-  // Look for your certifications array and add this object:
-const certifications = [
-  {
-    id: "codecademy-excel-analytics",
-    title: "Excel for Data Analysis",
-    issuer: "Codecademy",
-    issueDate: "2026",
-    description: "Developed specialized skills in professional data cleaning, pivot tables, and complex functions to drive business insights through spreadsheet modeling.",
-  },
-];
+  const certifications = [
+    {
+      id: "codecademy-excel-analytics",
+      title: "Excel for Data Analysis",
+      issuer: "Codecademy",
+      issueDate: "2026",
+      description: "Developed specialized skills in professional data cleaning, pivot tables, and complex functions to drive business insights through spreadsheet modeling.",
+    },
+  ];
 
   const projects = [
     {
       title: "Fake News Detection Model",
       desc: "Built an NLP classifier using Python and Scikit-learn to identify misinformation in text data with 75% accuracy.",
       tech: ["Python", "NLP", "ML"],
-      demo: "https://fake-news-project-o6e8.onrender.com" // YOUR PROJECT LINK
+      demo: "https://fake-news-project-o6e8.onrender.com" 
     },
     {
       title: "Online Bookstore Analytics",
@@ -105,7 +105,7 @@ const certifications = [
       title: "Personal Portfolio Webapp",
       desc: "Developed a responsive site using HTML/CSS and React to showcase projects and technical progress.",
       tech: ["React", "Tailwind", "Responsive Design"],
-      demo: "https://riya-yadav-portfolio.onrender.com" // Added your portfolio link here
+      demo: "https://riya-yadav-portfolio.onrender.com" 
     }
   ];
 
@@ -117,6 +117,7 @@ const certifications = [
         variants={containerVariants}
         className="max-w-6xl mx-auto grid md:grid-cols-12 gap-0 min-h-screen shadow-2xl border-x border-gray-900"
       >
+        
         {/* SIDEBAR */}
         <div className="md:col-span-4 bg-[#111] p-8 md:p-12 border-r border-gray-900">
           <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -256,8 +257,6 @@ const certifications = [
                     <h4 className="font-bold text-gray-200 group-hover:text-blue-400 transition-colors italic">{project.title}</h4>
                     <div className="flex gap-2">
                       <Github size={14} className="text-gray-600 hover:text-white cursor-pointer" />
-                      
-                      {/* CLICKABLE LINK LOGIC */}
                       {project.demo ? (
                         <a href={project.demo} target="_blank" rel="noopener noreferrer" title="View Live Project">
                           <ExternalLink size={14} className="text-blue-400 hover:text-blue-200 cursor-pointer" />
@@ -273,6 +272,24 @@ const certifications = [
                       <span key={t} className="text-[10px] text-gray-500 font-mono uppercase tracking-tighter">#{t}</span>
                     ))}
                   </div>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+
+          {/* CERTIFICATIONS SECTION */}
+          <motion.section variants={itemVariants}>
+            <SectionHeading title="Certifications" icon={Award} />
+            <div className="space-y-4">
+              {certifications.map((cert) => (
+                <div key={cert.id} className="p-5 bg-[#111] border border-gray-900 rounded-lg">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h4 className="font-bold text-gray-200 italic">{cert.title}</h4>
+                      <p className="text-blue-400 text-xs mt-0.5">{cert.issuer} • {cert.issueDate}</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-400 leading-relaxed mt-3">{cert.description}</p>
                 </div>
               ))}
             </div>
