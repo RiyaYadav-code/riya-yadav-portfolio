@@ -60,17 +60,28 @@ export default function App() {
   };
 
   const skills = [
-    { name: "SQL (Intermediate)", type: "core" },
+    { name: "MYSQL", type: "core" },
     { name: "Power BI", type: "core" },
     { name: "Python", type: "core" },
-    { name: "NLP", type: "core" },
     { name: "Machine Learning", type: "core" },
-    { name: "Web Programming", type: "core" }
+    { name: "Web Programming", type: "core" },
+    {name: "Excel",type:"core"}
   ];
 
   const aiTools = [
     "ChatGPT", "Julius AI", "Claude", "Gemini", "GitHub Copilot", "Prompt Engineering"
   ];
+
+  // Look for your certifications array and add this object:
+const certifications = [
+  {
+    id: "codecademy-excel-analytics",
+    title: "Excel for Data Analysis",
+    issuer: "Codecademy",
+    issueDate: "2026",
+    description: "Developed specialized skills in professional data cleaning, pivot tables, and complex functions to drive business insights through spreadsheet modeling.",
+  },
+];
 
   const projects = [
     {
