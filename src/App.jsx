@@ -229,23 +229,36 @@ export default function App() {
               </div>
             </div>
           </motion.section>
-
-          <motion.section variants={itemVariants}>
-            <SectionHeading title="Experience" icon={Camera} />
-            <div className="relative pl-6 border-l border-gray-800">
-              <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
-              <div className="flex flex-col md:flex-row md:justify-between mb-1">
-                <h3 className="text-white font-bold text-lg italic">Event Volunteer</h3>
-                <span className="text-blue-400 text-sm font-mono">2024</span>
+              
+              {/* 💼 NEW: DATA ANALYTICS INTERNSHIP */}
+              <div className="relative pl-6 border-l border-gray-800">
+                <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
+                <div className="flex flex-col md:flex-row md:justify-between mb-1">
+                  <h3 className="text-white font-bold text-lg italic">Data Analytics Intern</h3>
+                  <span className="text-blue-400 text-sm font-mono">May 2026 — June 2026</span>
+                </div>
+                <p className="text-gray-300 font-medium italic">SkillFied Mentor</p>
+                <ul className="mt-3 space-y-2 text-sm text-gray-400 list-disc list-inside text-justify">
+                  <li>Cleaned, transformed, and processed structured datasets to uncover key performance trends and business insights.</li>
+                  <li>Developed analytical workflows and leveraged data visualization practices to communicate metrics effectively.</li>
+                  <li>Demonstrated exceptional dedication and consistency in delivering data-driven tasks under structured timelines.</li>
+                </ul>
               </div>
-              <p className="text-gray-300 font-medium italic">University Fest, SGT University</p>
-              <ul className="mt-3 space-y-2 text-sm text-gray-400 list-disc list-inside">
-                <li>Managed coordination between design, logistics, and promotion teams</li>
-                <li>Took part in event branding and photography coverage</li>
-                <li>Ensured smooth operations during high-pressure scenarios</li>
-              </ul>
-            </div>
-          </motion.section>
+
+              {/* 🕒 EXISTING: EVENT VOLUNTEER */}
+              <div className="relative pl-6 border-l border-gray-800">
+                <div className="absolute w-3 h-3 bg-gray-700 rounded-full -left-[6.5px] top-1"></div>
+                <div className="flex flex-col md:flex-row md:justify-between mb-1">
+                  <h3 className="text-white font-bold text-lg italic">Event Volunteer</h3>
+                  <span className="text-gray-500 text-sm font-mono">2024</span>
+                </div>
+                <p className="text-gray-300 font-medium italic">University Fest, SGT University</p>
+                <ul className="mt-3 space-y-2 text-sm text-gray-400 list-disc list-inside">
+                  <li>Managed coordination between design, logistics, and promotion teams</li>
+                  <li>Took part in event branding and photography coverage</li>
+                  <li>Ensured smooth operations during high-pressure scenarios</li>
+                </ul>
+              </div>
 
           <motion.section variants={itemVariants}>
             <SectionHeading title="Academic Projects" icon={Layout} />
