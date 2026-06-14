@@ -229,7 +229,10 @@ export default function App() {
               </div>
             </div>
           </motion.section>
-              
+
+          <motion.section variants={itemVariants}>
+            <SectionHeading title="Experience" icon={Camera} />
+            <div className="space-y-8">
               {/* 💼 NEW: DATA ANALYTICS INTERNSHIP */}
               <div className="relative pl-6 border-l border-gray-800">
                 <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
@@ -259,6 +262,8 @@ export default function App() {
                   <li>Ensured smooth operations during high-pressure scenarios</li>
                 </ul>
               </div>
+              </div>
+          </motion.section>
 
           <motion.section variants={itemVariants}>
             <SectionHeading title="Academic Projects" icon={Layout} />
