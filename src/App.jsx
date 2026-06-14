@@ -229,11 +229,12 @@ export default function App() {
               </div>
             </div>
           </motion.section>
-
           <motion.section variants={itemVariants}>
-            <SectionHeading title="Experience" icon={Camera} />
+            <SectionHeading title="Experience" icon={BookOpen} />
+            
             <div className="space-y-8">
-              {/* 💼 NEW: DATA ANALYTICS INTERNSHIP */}
+              
+              {/* 💼 DATA ANALYTICS INTERNSHIP */}
               <div className="relative pl-6 border-l border-gray-800">
                 <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1"></div>
                 <div className="flex flex-col md:flex-row md:justify-between mb-1">
@@ -248,7 +249,7 @@ export default function App() {
                 </ul>
               </div>
 
-              {/* 🕒 EXISTING: EVENT VOLUNTEER */}
+              {/* 🕒 EVENT VOLUNTEER */}
               <div className="relative pl-6 border-l border-gray-800">
                 <div className="absolute w-3 h-3 bg-gray-700 rounded-full -left-[6.5px] top-1"></div>
                 <div className="flex flex-col md:flex-row md:justify-between mb-1">
@@ -262,7 +263,8 @@ export default function App() {
                   <li>Ensured smooth operations during high-pressure scenarios</li>
                 </ul>
               </div>
-              </div>
+
+            </div>
           </motion.section>
 
           <motion.section variants={itemVariants}>
