@@ -74,6 +74,13 @@ export default function App() {
 
   const certifications = [
     {
+      id: "skillfied-data-analytics",
+      title: "Data Analytics Internship",
+      issuer: "SkillFied Mentor",
+      issueDate: "June 2026",
+      description: "Formally recognized for completing structured data analytics assignments, demonstrating consistency, technical dedication, and proficiency in parsing datasets for actionable insights.",
+    },
+    {
       id: "codecademy-excel-analytics",
       title: "Excel for Data Analysis",
       issuer: "Codecademy",
@@ -83,6 +90,12 @@ export default function App() {
   ];
 
   const projects = [
+    {
+    title: "LinkedIn AI Coach",
+      desc: "Developed an AI agent that parses LinkedIn profile structures to analyze professional branding and generate tailored optimization strategies using targeted LLM prompting.",
+      tech: ["AI Agents", "LLM Integration", "Python", "React"],
+      demo: "https://lnkd.in/dtPjQ4Hk"
+    },
     {
       title: "Fake News Detection Model",
       desc: "Built an NLP classifier using Python and Scikit-learn to identify misinformation in text data with 75% accuracy.",
