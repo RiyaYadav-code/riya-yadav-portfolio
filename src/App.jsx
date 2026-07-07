@@ -147,7 +147,7 @@ export default function App() {
         <div className="md:col-span-4 bg-[#111] p-8 md:p-12 border-r border-gray-900">
           <motion.div variants={itemVariants} className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 className="text-3xl font-black tracking-tighter uppercase">RIYA YADAV</h1>
-            <p className="text-blue-400 font-medium text-sm mt-2 tracking-wide uppercase">Aspiring Data Analyst Intern</p>
+            <p className="text-blue-400 font-medium text-sm mt-2 tracking-wide uppercase">Aspiring Data Analyst</p>
             <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
