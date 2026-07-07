@@ -59,17 +59,30 @@ export default function App() {
     visible: { y: 0, opacity: 1 }
   };
 
-  const skills = [
-    { name: "MYSQL", type: "core" },
-    { name: "Power BI", type: "core" },
+// --- UPDATED TECHNICAL SKILL GROUPS ---
+  const programmingSkills = [
     { name: "Python", type: "core" },
-    { name: "Machine Learning", type: "core" },
-    { name: "Excel", type: "core" },
-    { name: "Web Programming", type: "core" }
+    { name: "SQL (MySQL)", type: "core" }
+  ];
+
+  const dataAnalyticsSkills = [
+    { name: "Microsoft Excel", type: "core" },
+    { name: "Power BI", type: "core" },
+    { name: "Data Cleaning", type: "core" },
+    { name: "Data Visualization", type: "core" },
+    { name: "Exploratory Data Analysis (EDA)", type: "core" }
+  ];
+
+  const pythonLibraries = [
+    "Pandas", "NumPy", "Matplotlib", "Scikit-learn"
+  ];
+
+  const machineLearningSkills = [
+    "Machine Learning", "Natural Language Processing (NLP)"
   ];
 
   const aiTools = [
-    "ChatGPT", "Julius AI", "Claude", "Gemini", "GitHub Copilot", "Prompt Engineering"
+    "ChatGPT", "Gemini"
   ];
 
   const certifications = [
@@ -161,18 +174,54 @@ export default function App() {
             </a>
           </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <SectionHeading title="Technical Core" icon={Code2} />
-            <div className="flex flex-wrap mb-4">
-              {skills.map(skill => (
-                <SkillBadge key={skill.name}>{skill.name}</SkillBadge>
-              ))}
+         <motion.div variants={itemVariants}>
+            <SectionHeading title="Technical Skills" icon={Code2} />
+            
+            {/* Programming */}
+            <div className="mb-4">
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Programming</div>
+              <div className="flex flex-wrap">
+                {programmingSkills.map(skill => (
+                  <SkillBadge key={skill.name}>{skill.name}</SkillBadge>
+                ))}
+              </div>
+            </div>
+
+            {/* Data Analytics */}
+            <div className="mb-4">
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Data Analytics</div>
+              <div className="flex flex-wrap">
+                {dataAnalyticsSkills.map(skill => (
+                  <SkillBadge key={skill.name}>{skill.name}</SkillBadge>
+                ))}
+              </div>
+            </div>
+
+            {/* Python Libraries */}
+            <div className="mb-4">
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Python Libraries</div>
+              <div className="flex flex-wrap">
+                {pythonLibraries.map(lib => (
+                  <SkillBadge key={lib}>{lib}</SkillBadge>
+                ))}
+              </div>
+            </div>
+
+            {/* Machine Learning */}
+            <div className="mb-4">
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Machine Learning</div>
+              <div className="flex flex-wrap">
+                {machineLearningSkills.map(ml => (
+                  <SkillBadge key={ml}>{ml}</SkillBadge>
+                ))}
+              </div>
             </div>
             
-            <div className="mt-6">
-              <div className="flex items-center gap-2 mb-3">
+            {/* AI Tools */}
+            <div className="mt-4">
+              <div className="flex items-center gap-2 mb-2">
                 <Cpu size={14} className="text-blue-400" />
-                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">AI & Productivity Tools</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">AI Tools</span>
               </div>
               <div className="flex flex-wrap">
                 {aiTools.map(tool => (
@@ -227,7 +276,7 @@ export default function App() {
                 <p className="text-gray-300 font-medium italic">Bachelor of Computer Applications (AI/ML)</p>
                 <div className="mt-2 flex flex-wrap gap-3 text-xs">
                   <span className="bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20 italic">Pursuing</span>
-                  <span className="bg-gray-800 text-gray-400 px-2 py-1 rounded">Avg SGPA: 8.6+</span>
+                  <span className="bg-gray-800 text-gray-400 px-2 py-1 rounded">Current SGPA: 9.77</span>
                 </div>
               </div>
 
