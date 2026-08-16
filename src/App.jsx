@@ -100,6 +100,13 @@ export default function App() {
       issueDate: "2026",
       description: "Developed specialized skills in professional data cleaning, pivot tables, and complex functions to drive business insights through spreadsheet modeling.",
     },
+    {
+      id: "NPTEL Certification",
+      title: "Programming in Java ",
+      issuer: "IIT Kharagpur through SWAYAM",
+      issueDate: "2026",
+      description: "This 12-week course strengthened my understanding of Java programming, object-oriented concepts, and problem-solving.",
+    },
   ];
 
   const projects = [
@@ -109,6 +116,17 @@ export default function App() {
       tech: ["AI Agents", "LLM Integration", "Python", "React"],
       demo: "https://lnkd.in/dtPjQ4Hk"
     },
+    {
+      title: "Product Billing System",
+      desc: "Developed an Advanced Product Billing System using PHP and SQLite, to create a simple and practical solution for managing product billing.",
+      tech: ["PHP","SQLite","HTML","CSS", "JavaScript","Docker"],
+      demo: "https://php-sqlite-billing-system.onrender.com"
+    },
+    {
+      title: "NEEPCO Sourcing & Compliance Portal",
+      desc: "Designed a secure, responsive enterprise ledger system to track corporate procurement allocations from MSME vendors, aligning directly with real-world Ministry of Power datasets.",
+      tech: ["Vanilla JS ","Express.js","SQLite","HTML","CSS"],
+      demo: "https://php-sqlite-billing-system.onrender.com"
     {
       title: "Fake News Detection Model",
       desc: "Built an NLP classifier using Python and Scikit-learn to identify misinformation in text data with 75% accuracy.",
