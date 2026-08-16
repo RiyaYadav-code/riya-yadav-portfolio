@@ -127,6 +127,7 @@ export default function App() {
       desc: "Designed a secure, responsive enterprise ledger system to track corporate procurement allocations from MSME vendors, aligning directly with real-world Ministry of Power datasets.",
       tech: ["Vanilla JS ","Express.js","SQLite","HTML","CSS"],
       demo: "https://php-sqlite-billing-system.onrender.com"
+    },
     {
       title: "Fake News Detection Model",
       desc: "Built an NLP classifier using Python and Scikit-learn to identify misinformation in text data with 75% accuracy.",
@@ -149,7 +150,7 @@ export default function App() {
       desc: "Developed a responsive site using HTML/CSS and React to showcase projects and technical progress.",
       tech: ["React", "Tailwind", "Responsive Design"],
       demo: "https://riya-yadav-portfolio.onrender.com" 
-    }
+    },
   ];
 
   return (
